@@ -9,8 +9,9 @@ data:
       - system:nodes
       rolearn: arn:aws:iam::519002666132:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-1DBHED9TMYRZZ
       username: system:node:{{EC2PrivateDNSName}}
+    - groups:
       - system:masters
-      rolearn: arn:aws:iam::519002666132:role/UdacityFlaskDeployCBKubectlRole
+      rolearn: arn:aws:iam::556923614973:role/UdacityFlaskDeployCBKubectlRole
       username: build
 kind: ConfigMap
 metadata:
@@ -19,3 +20,4 @@ metadata:
   namespace: kube-system
   resourceVersion: "1631"
   uid: 86402a4e-a9ff-4721-8c24-f0c4258f7440
+  region: us-east-2
