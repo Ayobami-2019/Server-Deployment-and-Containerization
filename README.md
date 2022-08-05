@@ -71,6 +71,22 @@ cd cd0157-Server-Deployment-and-Containerization/
 ├── simple_jwt_api.yml
 ├── test_main.py  #ToDo
 └── trust.json     #ToDo 
+
+├── Dockerfile
+├── aws-auth-patch.yml           # TODO - A sample EKS Cluster configMap file. 
+├── ci-cd-codepipeline.cfn.yml   # TODO - YAML template to create CodePipeline pipeline and CodeBuild resources
+├── buildspec.yml
+├── simple_jwt_api.yml
+├── trust.json              # TODO - Used for creating an IAM role for Codebuild
+├── iam-role-policy.json    
+├── main.py                 
+├── requirements.txt        
+└── test_main.py            # TODO - Unit Test file
+
+trust.json: This file and iam-role-policy.json file will be used for creating an IAM role for Codebuild to assume while building your code and deploying to the EKS cluster.
+aws-auth-patch.yml: You will create a file similar to this one after creating en EKS cluster. We have given you a sample file so that the YAML indentations will not trouble you.
+ci-cd-codepipeline.cfn.yml: This is the Cloudformation template that we will use to create Codebuild, Codepipeline, and related resources like IAM roles and S3 bucket. This file is almost complete, except for you to write a few parameter values specific to you. Once the Codebuild resource is created, it will run the commands mentioned in the buildspec.yml.
+test_main.py: You will write unit tests in this file.
 ```
 
      
@@ -86,3 +102,5 @@ Completing the project involves several steps:
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
 For more detail about each of these steps, see the project lesson.
+
+aws ssm put-parameter --name JWT_SECRET --value "myjwtsecret" --region us-east-2 --type  SecureString
