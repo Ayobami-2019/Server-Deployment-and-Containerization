@@ -1,5 +1,5 @@
 ---
-version: 0.2
+version: 1.22
 
 
 phases:
@@ -56,4 +56,4 @@ artifacts:
 
 env:
   parameter-store:         
-    JWT_SECRET: success
+    JWT_SECRET: JWT_SECRET
