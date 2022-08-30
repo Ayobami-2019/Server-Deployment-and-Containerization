@@ -56,4 +56,4 @@ artifacts:
 
 env:
   parameter-store:         
-    JWT_SECRET: 'success'
+    JWT_SECRET: JWT_SECRET
